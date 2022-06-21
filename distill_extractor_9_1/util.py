@@ -470,7 +470,7 @@ def training_transductive_model(conf=None, hdf_eval=None, device=None, strt_inde
             x_sampled_neg = X_neg[neg_indices]
             y_sampled_neg = torch.ones(x_sampled_neg.size(0)).long()
 
-            pos_indices = torch.randperm(len(X_pos))[::8]
+            pos_indices = torch.randperm(len(X_pos))[:5]
             x_sampled_pos = X_pos[pos_indices]
             y_sampled_pos = torch.zeros(x_sampled_pos.size(0)).long()
 
